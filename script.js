@@ -4,14 +4,17 @@ let yPos = 0;
 
 function moveSnow() {
     if (xPos < 5) {
-        snow.xPos+=0.01
-        snow.yPos+=0.01
+        xPos+=0.1
+        yPos+=0.1
     }
 
     else {
-        snow.xPos+=-5
-        snow.yPos+=0
+        xPos = -5
+        yPos = 0
     }
+
+    snow.setAttribute('position', `${xPos} ${yPos} 0`)
+    requestAnimationFrame(moveSnow)
 }
 
 moveSnow()
